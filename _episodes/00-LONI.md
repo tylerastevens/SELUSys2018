@@ -1,10 +1,10 @@
 ---
-title: Short Introduction to Programming in Python
+title: LONI Logins and Setup
 teaching: 0
 exercises: 0
 questions:
-  - "What is Python?"
-  - "Why should I learn Python?"
+  - "How can I connect to remote computing resources?"
+  - "How can I use GitHub Classroom to manage my assignments?"
 objectives:
   - "Describe the advantages of using programming vs. completing repetitive tasks by hand."
   - "Define the following data types in Python: strings, integers, and floats."
