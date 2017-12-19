@@ -4,12 +4,11 @@ root: .
 
 professors :
   - April Wright
-  - Raul Diaz
 ---
 
 **Instructor:** {{ page.maintainers | join: ', ' }}
 
-This webpage will contain all the code, data and lecture materials for BIOL 499/599, Genomics and Transcriptomics.
+This webpage will contain all the code, data and lecture materials for BIOL 699, Systematics Lab.
 
 
 > ## Getting Started
