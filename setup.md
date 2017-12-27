@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Setup
-root: .
+permalink: /setup/
 ---
 
 If you are using a lab computer, these steps have been done for you. You do not need to perform them.
