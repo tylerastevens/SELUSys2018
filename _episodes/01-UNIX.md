@@ -1,7 +1,7 @@
 ---
-layout: page
-title: 01-UNIX
-root: .
+title: "Downloading the class files"
+teaching: 5
+exercises: 0
 ---
 
 You need to download some files to follow this lesson:
