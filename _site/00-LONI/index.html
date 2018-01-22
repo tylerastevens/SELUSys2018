@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-01-02 13:40:48 -0600">
+    <meta http-equiv="last-modified" content="2018-01-22 08:59:00 -0600">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -74,7 +74,19 @@
             
             <li><a href="../07-Script/">Shell Scripts</a></li>
             
-            <li><a href="../08-Find/">Finding Things</a></li>
+            <li><a href="../08-ProjectOrganization/">Project Organization</a></li>
+            
+            <li><a href="../09-GitIntro/">Setting Up Git</a></li>
+            
+            <li><a href="../10-GitSetUp/">Setting Up Git</a></li>
+            
+            <li><a href="../11-GitRepositories/">Creating a Repository</a></li>
+            
+            <li><a href="../12-GitChanges/">Tracking Changes</a></li>
+            
+            <li><a href="../13-Github/">Remotes in GitHub</a></li>
+            
+            <li><a href="../14-MSA/">Multiple Sequence Alignment</a></li>
             
           </ul>
         </li>
@@ -214,7 +226,12 @@
 
 <p>If you successfully log in, you should see something like this:</p>
 
-<p><img src="https://github.com/SELUSys/SELUSys2018/blob/master/assets/img/LONI.png" alt="LONI Login Screen" /></p>
+<p><img src="../fig/LONI.png" alt="LONI Login Screen" /></p>
+
+<p>Each day, when we begin, start an interactive session on LONI with:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qsub -I -V -A loni_selu_sys -q single -l nodes=1:ppn=1,walltime=3:00:00
+</code></pre></div></div>
 
 <blockquote class="keypoints">
   <h2>Key Points</h2>

@@ -50,3 +50,9 @@ Replace 'username' with your username. You will be prompted to enter your LONI p
 If you successfully log in, you should see something like this:
 
 ![LONI Login Screen](../fig/LONI.png)
+
+Each day, when we begin, start an interactive session on LONI with:
+
+```
+qsub -I -V -A loni_selu_sys -q single -l nodes=1:ppn=1,walltime=3:00:00
+```
