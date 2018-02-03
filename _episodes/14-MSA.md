@@ -52,27 +52,38 @@ cd tcoffee
 cd compile
 make t_coffee
 ```
-We haven't played with any software yet in this class, so I'll now have you create a single location for all your software to live. Change directories into your home. Create a directory called 'bin'. Move the t-coffee executeable into it.
+We haven't played with any software yet in this class, so I'll now have you create a single location for all your software to live. Change directories into your home. Copy t-coffee into your user home.
 
-Now, move into the SELUSys repository. Enter the data directory, and the MSALab directory. We'll now run t_coffee on its default settings (a BLOSUM62 matrix with no gap penalty):
+Move to your /work/ directory. Make a directory called 'lab1', with subfolders for data, scripts and output. Move into the data directory of lab1. 
+
+Now, we will copy the data for our first lab exercise into our lab one directory. In the SELUSys2018 repository, I have a directory called data, and a subdirectory called MSALab. We will practice our file movement - copy this file to your lab1 data directory.
+
+We'll now run t_coffee on its default settings (a BLOSUM62 matrix with no gap penalty). First:
 
 ```
-t_coffee data/sh3.fasta
+qsub -I -V -A loni_selu_sys -q single -l nodes=1:ppn=1,walltime=3:00:00
+```
+
+This will place us on a node so we can use lots of memory for this job.
+
+
+```
+~/t_coffee data/sh3.fasta
 ```
 Now, we'll try a gap-opening penalty:
 
 ```
-t_coffee data/sh3.fasta -matrix blosum62mt -gapopen 5 -outfile=gapopen5
+~/t_coffee data/sh3.fasta -matrix blosum62mt -gapopen 5 -outfile=gapopen5
 ```
 
 And one with a gap-extending penalty: 
 ```
-t_coffee data/sh3.fasta -matrix blosum62mt -gapopen 5 gapextend 5 outfile gapopen5
+~/t_coffee data/sh3.fasta -matrix blosum62mt -gapopen 5 gapextend 5 outfile=gapopen5
 ```
 
 Try one or two more additional alignments, such as increasing the gap open or extension. 
 
-Now, transfer your .aln files to your personal machine using the scp command. Use [Wasabi](http://wasabiapp.org/)to view them.
+Now, transfer your .aln files to your home directory, then to your personal machine using the scp command. Use [T-Coffee's online viewer](http://tcoffee.crg.cat/apps/tcoffee/do:core) to view them.
 
 ##Iterative Approaches to MSA
 
@@ -115,18 +126,9 @@ to update this directory. Move the script into your lab1 scripts directory.
 
 Use a text editor to open pasta_script1. Let's unpack this script together. Feel free to make notes in your script about what different parts mean.
 
-Now, we will run the script. First:
-
+Now, we will run the script. 
 ```
-qsub -I -V -A loni_selu_sys -q single -l nodes=1:ppn=1,walltime=3:00:00
-```
-
-This will place us on a node so we can use lots of memory for this job.
-
-Execute the actual pasta run:
-
-```
-python ~/pasta/run_pasta.py -i data/pythonidae.fasta
+qsub pasta_script1
 ```
 
 As this runs, we will discuss the output that is appearing to the screen. 

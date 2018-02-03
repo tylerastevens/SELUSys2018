@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-01-05 15:45:45 -0600">
+    <meta http-equiv="last-modified" content="2018-02-02 16:35:57 -0600">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -253,14 +253,150 @@ make t_coffee
 
 <p>Try one or two more additional alignments, such as increasing the gap open or extension.</p>
 
-<p>Now, transfer your .aln files to your personal machine using the scp command. Use http://msa.biojs.net/ to view them.</p>
+<p>Now, transfer your .aln files to your personal machine using the scp command. Use <a href="http://wasabiapp.org/">Wasabi</a>to view them.</p>
 
-<p>##Iterative Approaches to MSA
-##Coestimation of MSA and Phylogeny</p>
+<p>##Iterative Approaches to MSA</p>
+
+<p>Progressive aligners make a set of assumptions, and apply those assumptions to the whole set of sequences across a phylogeny. But many datasets are fairly large, and may have different evolutionary dynamics across the tree. <em>Iterative aligners</em> use tree information to guide the process of making the alignment.</p>
+
+<p><img src="../fig/pasta.jpg" alt="Diagram of Sate/PASTA Algorithm" /></p>
+
+<p>Now, we will download PASTA:</p>
+
+<pre><code class="language-unix">git clone https://github.com/smirarab/sate-tools-linux.git
+git clone https://github.com/smirarab/pasta.git
+</code></pre>
+
+<p>And we will load a couple libraries required by pasta:</p>
+<pre><code class="language-unix">module load java
+module load python/3.5.2-anaconda-tensorflow
+</code></pre>
+
+<p>Now, we build pasta:</p>
+
+<pre><code class="language-unix">python setup.py develop --user
+</code></pre>
+
+<p>Before you leave the directory, give yourself permission to execute this file.</p>
+
+<p>We will be submitting these jobs to the nodes of the LONI computer. Change directories back into your home directory.</p>
+
+<p>Now, change directories into your work directory. Create a directory called “lab1”, containing three subdirectories: “data”, “scripts”, and “output”.</p>
+
+<p>Enter the SELUSys2018 class directory. In it, there is a directory called scripts. List this directory. If you have a script called “pasta_script1”, copy this script into your lab1 scripts directory. If you do not have this file, type</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull
+</code></pre></div></div>
+
+<p>to update this directory. Move the script into your lab1 scripts directory.</p>
+
+<p>Use a text editor to open pasta_script1. Let’s unpack this script together. Feel free to make notes in your script about what different parts mean.</p>
+
+<p>Now, we will run the script. First:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qsub -I -V -A loni_selu_sys -q single -l nodes=1:ppn=1,walltime=3:00:00
+</code></pre></div></div>
+
+<p>This will place us on a node so we can use lots of memory for this job.</p>
+
+<p>Execute the actual pasta run:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python ~/pasta/run_pasta.py -i data/pythonidae.fasta
+</code></pre></div></div>
+
+<p>As this runs, we will discuss the output that is appearing to the screen.</p>
+
+<p>Now, we will look at the output. Create an “exercise_one” directory in the output directory. Move all of the outputs into the exercise_one directory.</p>
+
+<p>Copy the pastajob.marker001.pythonidae.aln and pastajob_temp_iteration_2_tree.tre into your user home:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp output/exercise_one/pastajob_temp_iteration_2_tree.tre ~/
+cp output/exercise_one/pastajob.marker001.pythonidae.aln ~/
+</code></pre></div></div>
+
+<p>Now, we will copy these files to our local machine. Open a new terminal window. Navigate to the class repository, and make a lab1 directory, with somewhere to store the output. Change directories into it. Now, we will use secure copy to move the alignment file into our directory:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp &lt;username&gt;@qb2.loni.org:~/pastajob.marker001.pythonidae.aln .
+scp &lt;username&gt;@qb2.loni.org:~/pastajob_temp_iteration_2_tree.tre .
+</code></pre></div></div>
+
+<h3 id="choice-of-tree-estimator">Choice of Tree Estimator</h3>
+
+<p>Pasta allows us to build a tree for iterative estimation in different ways. <a href="http://www.microbesonline.org/fasttree/">FastTree</a> has some known <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0027731">accuracy issues</a>. That’s probably not an issue for an early stage analysis that will be improved. But let’s have a look at what happens if we use a better alignment.</p>
+
+<p>In the class repository, there is a second script for today, pasta_script2. Copy it into your lab1 folder. Open it in nano. We will need to edit the working directory, and your email address.</p>
+
+<p>From the lab1 directory, submit the script to the nodes using:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qsub pasta_script2
+</code></pre></div></div>
+
+<p>You can check on the progress of your job by typing</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qstat -u &lt;your username&gt;
+</code></pre></div></div>
+
+<p>You’ll get output something like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Req'd   Elap
+Job ID               Username    Queue    Jobname          SessID NDS   TSK    Memory Time  S Time
+-------------------- ----------- -------- ---------------- ------ ----- ------ ------ ----- - -----
+446904.qb3           amwright    workq    binarysims        65908     1     20    --  36:00 R 29:17
+447323.qb3           amwright    workq    MSsims           101460     1     20    --  36:00 R 06:59
+447478.qb3           amwright    single   pasta             99242     1      1    --  01:00 R 00:01
+</code></pre></div></div>
+
+<p>Unfortunately, the way this cluster is configured, you won’t see any output from the actual analysis until it finishes running. This analysis will take about ___ minutes.</p>
+
+<p>While it runs, we will set up a new analysis.</p>
+
+<h3 id="changing-number-of-subsets">Changing Number of Subsets</h3>
+
+<p>Open the Python tree in IcyTree. How many clades do you think are on this tree? What size are they? Make a copy of the pasta_script2 to pasta_script3. Add the option “–max-subproblem-size=”, and choose what you think is the maximum clade size on this tree. Edit the jobname to something unique.</p>
+
+<h3 id="comparing-alignments">Comparing alignments</h3>
+
+<p>As your alignments finish, copy them to your computer - the final alignments will be in the .aln file. We will view our alignment files in <a href="http://wasabiapp.org/">Wasabi</a>, which is a simple-browswer based alignment.</p>
+
+<p>It can be very hard to appreciate the differences between alignments by eye. We will try making comparisons with <a href="https://github.com/smirarab/FastSP">FastSP</a>, which gives some at-a-glance comparisons.</p>
+
+<p>Change directories back to your home directory. Clone the FastSP software:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~/
+git clone https://github.com/smirarab/FastSP.git
+</code></pre></div></div>
+<p>Now, change back to your previous directory with:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd -
+</code></pre></div></div>
+
+<p>You can call FastSP like so:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -jar ~/FastSP/FastSP.jar -r reference_alignment_file -e estimated_alignment_file
+</code></pre></div></div>
+
+<p>So, for example, if I wanted to compare the alignment I estimated  with Pasta, using FastTree,  and the one with Pasta and Raxml, my command would look like</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -jar ~/FastSP/FastSP.jar -r /output/exercise_one/pastajob.marker001.pythonidae.aln -e /output/exercise_two/pastajob.marker001.pythonidae.aln
+</code></pre></div></div>
+
+<p>Based on these metrics, which alignment do you prefer? What other information would you want to know before choosing an alignment for your project?</p>
+
+<p>##Coestimation of MSA and Phylogeny</p>
+
+<p>Phylogenetic esitmation generally assumes that we know the alignment without error. We’ve already seen in our examples cases where we do not get the same alignment between methods. This is particularly true in areas that are hard to align. For example, in the below paper, they estimate a tree for fungi, which are deeply-diverged, and very diverse. The alignment has many problematic regions. What they showed in this paper was that by not accounting for the alignment uncertainty, support was overestimated for their tree hypothesis.</p>
+
+<p><img src="../fig/lutzoni.png" alt="Lutzoni paper" /></p>
+
+<p>We haven’t talked about Bayesian estimation, so I’m going to say very little on joint estimation of alignment and topology. This is a method that allows for a wide range of models to be deployed in order to estimate both the alignment and the tree, and shows great promise for difficult alignment issues. We have a few floating open labs throughout the semester, so if this is a topic of interest to people, we can revisit it then.</p>
+
+<p>The primary software that performs this analysis is <a href="http://www.bali-phy.org/Tutorial3.html">Bali-Phy</a>, which is described <a href="http://www.bali-phy.org/Redelings_and_Suchard_2005.pdf">here</a>.</p>
 
 <p>##References:</p>
 <ul>
   <li>T-Coffee Manual: http://tcoffee.readthedocs.io/en/latest/</li>
+  <li>Pasta Algorithm Description: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4424971/</li>
+  <li>Sate Algorithm Description: https://academic.oup.com/sysbio/article/61/1/90/1680002</li>
 </ul>
 
 <blockquote class="keypoints">
@@ -322,16 +458,5 @@ make t_coffee
 
       
     </div>
-    <script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/lesson.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-37305346-2', 'auto');
-  ga('send', 'pageview');
-</script>
   </body>
 </html>
