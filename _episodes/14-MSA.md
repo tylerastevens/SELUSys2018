@@ -191,7 +191,7 @@ Open the Python tree in IcyTree. How many clades do you think are on this tree? 
 
 As your alignments finish, copy them to your computer - the final alignments will be in the .aln file. We will view our alignment files in [Wasabi](http://wasabiapp.org/), which is a simple-browswer based alignment. 
 
-It can be very hard to appreciate the differences between alignments by eye. We will try making comparisons with [FastSP](https://github.com/smirarab/FastSP), which gives some at-a-glance comparisons.
+It can be very hard to appreciate the differences between alignments by eye. We will try making comparisons with [FastSP](https://github.com/smirarab/FastSP), which gives [some at-a-glance comparisons](https://academic.oup.com/bioinformatics/article/27/23/3250/234345).
 
 Change directories back to your home directory. Clone the FastSP software:
 
