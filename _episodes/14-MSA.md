@@ -217,6 +217,31 @@ So, for example, if I wanted to compare the alignment I estimated  with Pasta, u
 java -jar ~/FastSP/FastSP.jar -r /output/exercise_one/pastajob.marker001.pythonidae.aln -e /output/exercise_two/pastajob.marker001.pythonidae.aln
 ```
 
+FastSP calculates a few summary statistics on alignments. It's output should look like:
+
+```
+Reference alignment: /Users/april/Documents/SELUSys2018/lab1/output/pasta_exercise2/smallrax2.marker001.small.aln ...
+Estimated alignment: /Users/april/Documents/SELUSys2018/lab1/output/pasta_exercise3/subset_exp.marker001.small.aln ...
+MaxLenNoGap= 1027, NumSeq= 32, LenRef= 1169, LenEst= 1180, Cells= 75168
+computing ...
+Number of shared homologies: 447050
+Number of homologies in the reference alignment: 486886
+Number of homologies in the estimated alignment: 487792
+Number of correctly aligned columns: 716
+Number of aligned columns in ref. alignment: 1069
+SP-Score 0.9181820795833111
+Modeler 0.9164766949847476
+SPFN 0.0818179204166889
+SPFP 0.0835233050152524
+Compression 1.009409751924722
+TC 0.6697848456501403
+```
+
+The first line is some information that shouldn't surprise us too much: the maximum length of sequence in the file without gaps, NumSeq is the number of sequences in the file, the two Lens are the lengths of the alignments (including gaps), and cells are the total number of cells (num seq x number of nucleotides per line, summed for both alignments).
+
+Number of shared homologies refers to how many filled cells are filled in both, or gaps in both. Number of homologies in the reference/estimated alignment is the number of pairs of letters from the input sequences that occur in the same site - this can be larger than the amount of cells, because you'll make multiple comparisons per column. 
+ 
+
 Based on these metrics, which alignment do you prefer? What other information would you want to know before choosing an alignment for your project?
 
 
