@@ -257,6 +257,10 @@ We haven't talked about Bayesian estimation, so I'm going to say very little on 
 The primary software that performs this analysis is [Bali-Phy](http://www.bali-phy.org/Tutorial3.html), which is described [here](http://www.bali-phy.org/Redelings_and_Suchard_2005.pdf).
 
 
+##Homework
+
+Homework is [here](https://github.com/SELUSys/SELUSys2018/blob/master/homework/MSAHomework.md).
+
 ##References:
 * T-Coffee Manual: http://tcoffee.readthedocs.io/en/latest/
 * Pasta Algorithm Description: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4424971/
