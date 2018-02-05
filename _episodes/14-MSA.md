@@ -185,7 +185,7 @@ While it runs, we will set up a new analysis.
 
 ### Changing Number of Subsets
 
-Open the Python tree in IcyTree. How many clades do you think are on this tree? What size are they? Make a copy of the pasta_script2 to pasta_script3. Add the option "--max-subproblem-size=", and choose what you think is the maximum clade size on this tree. Edit the jobname to something unique.
+Open a tree from one of the iterations in IcyTree. How many clades do you think are on this tree? What size are they? Make a copy of the pasta_script2 to pasta_script3. Add the option "--max-subproblem-size=", and choose what you think is the maximum clade size on this tree. Edit the jobname to something unique.
 
 ### Comparing alignments
 
