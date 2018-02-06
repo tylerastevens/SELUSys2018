@@ -12,7 +12,7 @@ It would be more appropriate to use an algorithm with a gap extension penalty wh
 
 2. Breaking problems into subproblems is a common way to attack a tough problem. In the case of iterative alignments, we break the tree into smaller pieces. Are there biological questions for which you expect this would not be helpful?
 
-I think iterative alignments would be helpful in any biological inquiry.  The ability of iterative alignments to repeat the process of breaking down the tree and incorporating data back into the previously calculated alignments at the end of each round of analysis creates a method that results in high-quality, accurate results.  A goal of any analysis is accuracy, so I can’t see a situation where not using this method would be applicable.   
+I think iterative alignments would be helpful in any biological inquiry.  The ability of iterative alignments to repeat the process of breaking down the tree and incorporating data back into the previously calculated alignments at the end of each round of analysis creates a method that results in high-quality, accurate results.  A goal of any analysis is accuracy, so I can’t see a situation where not using this method would be applicable.  Maybe if you’re looking at very small,specific portions of similar sequences and pressed for time then this method may be a bit of overkill, but I think it would still be considered the best method.  
 
 
 
