@@ -1,3 +1,15 @@
+---
+title: PAUP and Parsimony
+teaching: 180
+exercises: 0
+questions:
+- "How do I use PAUP to build a parsimony tree?"
+objectives:
+- "Explain how parsimony works."
+- "Explain two statistical tests of clade support."
+- "Perform parsimony analyses using PAUP on LONI" 
+---
+
 ## Maximum Parsimony Analysis Using PAUP
 
 **Note to self:** Discuss homeworks. 
