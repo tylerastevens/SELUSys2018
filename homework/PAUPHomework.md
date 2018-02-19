@@ -11,8 +11,9 @@
 
 5. Transfer your trees to your desktop. Use FigTree or IcyTree to view them. Take a screenshot, and save it to the fig folder in the class repository. Below, complete the file path to where you have the file in the fig directory to embed the image of your screen shot. 
 
-![Embed your bootstrap tree here](../fig/your_bootstrap_tree_image)
-![Embed your jackknife tree here](../fig/your_jackknife_tree_image)
+![Embed your bootstrap tree here](../fig/your_bootstrap_tree_image) 
+
+![Embed your jackknife tree here](../fig/your_jackknife_tree_image) 
 
 
 ## Add, commit, and push your homework by 5 pm on Friday.
