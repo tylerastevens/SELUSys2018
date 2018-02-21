@@ -78,7 +78,7 @@ Now, we'll try a gap-opening penalty:
 
 And one with a gap-extending penalty: 
 ```
-~/t_coffee data/sh3.fasta -matrix blosum62mt -gapopen 5 gapextend 5 outfile=gapopen5
+~/t_coffee data/sh3.fasta -matrix blosum62mt -gapopen 5 -gapext 5 outfile=gapopen5
 ```
 
 Try one or two more additional alignments, such as increasing the gap open or extension. 
