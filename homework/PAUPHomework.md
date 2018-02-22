@@ -2,7 +2,7 @@
 
 1. From the iterative alignment section: Which aslignment (pasta_script1, pasta_script2, pasta_script3) do you think is the "best"? By what criteria did you arrive at this decision? 
 
-After viewing the results from the alignment analysis using FastSP, it was determined that pastascript_2 had the most homologies in comparison with the other scripts.  Therefore, this iterative alignment represents the best alignment out of the three possible choices.  
+After viewing the results from the alignment analysis using FastSP, it was determined that pastascript_2 had the most homologies in comparison with the other alignments.  Therefore, this iterative alignment represents the best alignment out of the three possible choices.  
 
 2. In tree searching, when would you expect the swap algorithm to matter strongly?
 
