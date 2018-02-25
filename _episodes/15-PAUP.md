@@ -134,6 +134,34 @@ hsearch swap= ______
 
 What was the score of your best tree? When would you expect the swap algorithm to matter strongly?
 
+Now, save some trees:
+
+```UNIX
+savetrees from=1 to=1 file=Results/tree1.tre;
+savetrees from=2 to=2 file=Results/tree1.tre;
+```
+
+Download them. How are these trees different? Why is PAUP saving multiple trees? 
+
+To confirm our intuition, let's score them all under parsimony:
+
+```
+pscore 1-121
+```
+
+This will print the number of parsimony steps on each tree. Does this confirm what you thought before? 
+
+We can summarize the trees with a consensus tree:
+
+```
+contree all / treefile=Results/contree.tre;
+```
+
+If you look at the help for the consensus tree function, you see that there are several options for how to compute the consensus tree. The default is **strict:** the tree which contains only groups found in all trees. **Semistrict** is similar, containing all compatible groups. This tree may contain clades that are not present in all trees, but are not contradicted by them either. **Majority Rule** is a common display setting, showing groups that are present in more than 50% of trees. An **Adams Consensus Tree** will place taxa that vary in their placement in the most inclusive sport within the group.
+
+Try a couple of these tree types. How do they differ in terms of their tree representation?
+
+
 ## The Bootstrap 
 
 We will now bootstrap our data. The bootstrap analysis generates a number of matrices (in our case, 100) from the original data matrix. Every taxon is represented in every matrix. Columns, however, are drawn, with replacement up until the original size of the matrix is obtained (i.e., the matrices are resampled with replacement). This process randomizes which characters are in the matrix, and measures repeatability. Typically more than 100 bootstraps will be run, and will generate support values for a node that run from 0-100. 
@@ -156,11 +184,19 @@ savetrees from=1 to=1 savebootp=nodelabels file=output/bootstrap.tre;
 
 The jackknife is similar to the bootstrap, but is performed without replacement. Therefore, each dataset is smaller.
 
+```UNIX
+jackknife nreps=100 search=heuristic /addseq=random;
+```
+
 Why would this be useful?
 
 ```unix 
 savetrees from=1 to=1 savebootp=nodelabels file=output/jackknife.tre;
 ```
+
+## Next Week
+
+We'll continue in PAUP, but begin thinking about how to use different types of step matrices.
 
 
 
