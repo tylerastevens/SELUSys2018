@@ -8,7 +8,7 @@ After viewing the results from the alignment analysis using FastSP, it was deter
 
 The size of the tree would be a major factor in regards to the swap algorithm.  The swap algorithm applied to smaller trees would matter much more than the algorithm applied to larger trees. Branch swapping or variable swapping on a smaller tree would have a greater impact on the resulting phylogeny in comparison to branch swapping on a larger, more complex tree.  
 
-3. In your own words, what is a bootstrap analysis? Does it make sense to describe a bootstrap value as the probability that a grouping on a tree is correct?
+3. In your own words, what is a bootstrap analysis? Does it make sense to describe a bootstrap value as the probability that a grouping on a tree is correct?  A bootstrap analysis is used to determine the quality of the 
 
 4. What might be a situation in which you would want to use the jackknife instead of the bootstrap? 
 
