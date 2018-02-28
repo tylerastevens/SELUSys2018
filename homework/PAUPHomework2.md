@@ -12,9 +12,11 @@ Jackknife could be useful when attempting to see what effect the removal of cert
 5. Transfer your trees to your desktop. Use FigTree or IcyTree to view them. Take a screenshot, and save it to the fig folder in the class repository. Below, complete the file path to where you have the file in the fig directory to embed the image of your screen shot. 
 
 
+
 [Bootstrap_Tree]SELUSys2018/fig/BootstrapTree.png
 
 [JK_Tree]SELUSys2018/fig/JackknifeTree.png
+
 
 ## Add, commit, and push your homework by 5 pm on Friday.
 
