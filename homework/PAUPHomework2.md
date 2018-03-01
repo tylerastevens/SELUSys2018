@@ -13,9 +13,9 @@ Jackknife could be useful when attempting to see what effect the removal of cert
 
 
 
-SELUSys2018/fig/BootstrapTree.png
+![BS_Tree](../fig/BootstrapTree.png)
 
-SELUSys2018/fig/JackknifeTree.png
+![JK_Tree](../fig/JackknifeTree.png)
 
 ## Add, commit, and push your homework by 5 pm on Friday.
 
