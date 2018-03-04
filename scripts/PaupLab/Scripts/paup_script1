@@ -1,0 +1,17 @@
+#!/bin/bash
+#PBS -q single
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=2:00:00
+#PBS -N pasta   
+#PBS -o paup.out
+#PBS -j oe
+#PBS -A loni_selu_sys
+#PBS -m a
+#PBS -M april.wright@selu.edu   
+
+
+module load paup
+cd  /work/amwright/PaupLab
+
+pwd
+paup -n Data/primate-executeable.nex
