@@ -1,3 +1,16 @@
+---
+title: Models: Beyond a simple step matrix
+teaching: 180
+exercises: 0
+questions:
+- "How do I use PAUP to try different evolutionary models?"
+objectives:
+- "Explain what different models are telling us about evolution."
+- "Perform heuristic searches under different models."
+- "Perform parsimony analyses using PAUP on LONI" 
+---
+
+
 ## What is parsimony doing anyway?
 
 What assumption does parsimony make about how characters evolve? 
