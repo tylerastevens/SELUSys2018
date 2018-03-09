@@ -19,7 +19,7 @@ Score (parsimony steps) of best tree with 5 characters set to the custom model =
 
 3. So far, we looked at models that vary in two paramters, base frequencies and transition/transversion bias. Which parameter made a bigger difference? Does this make sense to you? Why or why not?
 
-Transition/transversion bias made the bigger difference.
+Transition/transversion bias made the bigger difference.  This makes sense because, despite the fact that it is more difficult for a transversion to occur, eight of the twelve possible changes in nucleotides are transversions.  
 
 
 ## Commit and push to your copy of the repository by Friday at 5 pm.
