@@ -27,6 +27,7 @@ There were no changes in the topology of the two consensus trees.
 
 3. So far, we looked at models that vary in two paramters, base frequencies and transition/transversion bias. Which parameter made a bigger difference? Does this make sense to you? Why or why not?
 
+The parameter that made the biggest difference was base frequencies.  This makes sense because there can be a significant amount of heterogeneity among nucleotide frequencies.  
   
 
 
