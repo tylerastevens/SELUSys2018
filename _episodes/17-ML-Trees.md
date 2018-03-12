@@ -112,6 +112,8 @@ hsearch constraints=homogor enforce=yes
 
 This gives a very different likelihood for the tree. I'd be remiss not to mention this functionality, but I'm also not sure where else to put it.
 
+You can also use lscore to score a parsimony tree under a given model, and pscore to score a likelihood tree under parsimony.
+
 
 ## Calculating ML trees
 
