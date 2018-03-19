@@ -56,8 +56,16 @@
             <li><a href="{{ page.root }}{{ episode.url }}">{{ episode.title }}</a></li>
             {% endfor %}
           </ul>
+          <a href="{{ page.root }}/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Homeworks <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for homework in site.homeworks %}
+            <li><a href="{{ page.root }}{{ episode.url }}">{{ homework.title }}</a></li>
+            {% endfor %}
+          </ul>
         </li>
 	{% endif %}
+	
+	
 
 	{% comment %} Show extras for lessons or if this is the main workshop-template repo (where they contain documentation). {% endcomment %}
 	{% if site.kind == "lesson" or site.github.repository_name == "workshop-template" %}
