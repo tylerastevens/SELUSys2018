@@ -1,5 +1,5 @@
 ---
-title: Likelihood
+title: Likelihood HW
 teaching: 180
 exercises: 0
 questions:

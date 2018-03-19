@@ -1,5 +1,5 @@
 ---
-title: Bayesian Methods
+title: Bayesian Methods HW
 teaching: 180
 exercises: 0
 questions:

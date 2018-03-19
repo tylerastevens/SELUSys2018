@@ -1,5 +1,5 @@
 ---
-title: Multiple Sequence Alignment
+title: Multiple Sequence Alignment HW
 teaching: 30
 exercises: 0
 questions:

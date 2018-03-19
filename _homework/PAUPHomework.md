@@ -1,5 +1,5 @@
 ---
-title: PAUP and Parsimony
+title: PAUP and Parsimony HW
 teaching: 180
 exercises: 0
 questions:
