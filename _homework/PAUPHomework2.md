@@ -1,5 +1,5 @@
 ---
-title: Models: Beyond a simple step matrix
+title: Models - Beyond a simple step matrix
 teaching: 180
 exercises: 0
 questions:
