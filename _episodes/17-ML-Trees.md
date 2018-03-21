@@ -32,7 +32,7 @@ In the process of comparsing models under the hLRT, we calculate the likelihood 
 
 LR = 2*(lnL1-lnL2)
 
-in which L1 is the likelihood of the simpler model. The LR is Chi-Squared distributed, so we can simply use a Chi-Squared table to determine significance.
+in which L1 is the likelihood of the more complex model. The LR is Chi-Squared distributed, so we can simply use a Chi-Squared table to determine significance.
 
 We will now carry out this test in PAUP using the primate mtDNA dataset.
 
