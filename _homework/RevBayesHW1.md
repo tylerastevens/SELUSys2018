@@ -17,10 +17,5 @@ objectives:
 
 2. In Fig. 3, why is the number of observations constant?
 
-3. In the slide move, try 5 different ranges for the slide move. Which one produces the best ESS? 
+3. If you were not able to, finish the compilation of RevBayes. Copy the executeable (called rb) into your work directory.
 
-4. In the slide move, try 5 different ranges for the scale move. Which one produces the best ESS? 
-
-5. How does using both moves change the ESS? Why does this make (or not make) sense? 
-
-6. What happens if we change to an uniformative Gamma(0.001, 0.001)?
