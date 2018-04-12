@@ -1,0 +1,7 @@
+MODEL		Lemuroidea	Lorisoidea	Platyrrhini	Catarrhini
+JC		  0.609		    1		     1		     1
+HKY		  0.979		    1		     1		     1
+F81		  0.848		    1		     1		     1
+GTR		  0.951		    1		     1		     1
+GTR+Gamma	  0.922		    1		     1		     1
+GTR+Gamma+Inv	  0.800		    1		     1  	     1
