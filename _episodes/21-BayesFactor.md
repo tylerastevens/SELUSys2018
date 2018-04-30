@@ -10,7 +10,7 @@ objectives:
 - Perform a partitioned analysis of a data set on LONI.
 ---
 
-Partition PDF here 
-Bayes Factor PDF here
+Partition PDF [here](https://github.com/SELUSys/SELUSys2018/blob/master/partitionLab/RB_Partition_Tutorial.pdf)  
+Bayes Factor PDF [here](https://github.com/SELUSys/SELUSys2018/blob/master/partitionLab/RB_BayesFactor_Tutorial.pdf)
 
 We will do some editing to use the Bayes Factor scripts to make a custom partition-testing script. You may want to make a local copy of the scripts directory, if you don't normally.
