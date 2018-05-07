@@ -1,5 +1,5 @@
 ---
-title: Bayesian Methods HW
+title: DivTime HW1
 teaching: 180
 exercises: 0
 questions:
@@ -11,11 +11,7 @@ objectives:
 - "Perform ML analyses using PAUP on LONI" 
 ---
 
-## RevBayes Homework One
+## DivTime HW1
+1. When we describe the FBD as a mechanistic model, what does that mean? How does this contrast to node calibrations?
 
-1. In Fig. 2, what would each of these distributions say about the skill of the archer? 
-
-2. In Fig. 3, why is the number of observations constant?
-
-3. If you were not able to, finish the compilation of RevBayes. Copy the executeable (called rb) into your work directory.
-
+2. When we apply a node calibration, what are we trying to describe? 
